@@ -1,41 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akan name generator</title>
-    <link rel="stylesheet" href="./styles.css"/>
-    
+    <link rel="stylesheet" href="./styles.css" />
+
 </head>
+
 <body>
     <header>
         <h1> AKAN NAME GENERATOR</h1>
         <p> The ghananian culture</p>
         <nav>
-            
-        <a href=" #about">ABOUT</a>
-        <a href="#schedule">NAMES</a>
+
+            <a href=" #about">ABOUT</a>
+            <a href="#schedule">NAMES</a>
         </nav>
-            
+
     </header>
     <!-- about akan -->
     <section id="about">
         <div class="box1">
-        <h2>THE AKAN CULTURE</h2>
-        <img class="profileakan" src="./profileakan.jpg" alt="">
-        <p id="parrah">In Akan culture, naming is a sacred spiritual act that connects a child to their ancestors, family, and the universe.<br> 
-            Every Akan child is given a mandatory day name (or "soul name") based on the day of the week they were born,
-             which is believed to influence their personality and destiny</p>
+            <h2>THE AKAN CULTURE</h2>
+            <img class="profileakan" src="./profileakan.jpg" alt="">
+            <p id="parrah">In Akan culture, naming is a sacred spiritual act that connects a child to their ancestors,
+                family, and the universe.<br>
+                Every Akan child is given a mandatory day name (or "soul name") based on the day of the week they were
+                born,
+                which is believed to influence their personality and destiny</p>
 
 
         </div>
 
     </section>
-    <section >
-        <div>
+    <form>
+            <!-- full name input -->
+            <label for="dd">DATE:</label> <br>
+             <input type="number" class="form-control" id="dd" placeholder="DD" min="0" max="31" required><br><br>
+            <!-- email input -->
+            <label for="mm">MONTH:</label> <br>
+            <input type="number" class="form-control" id="mm" placeholder="MM" min="0" max="12" required> <br><br>
+            <!-- message input -->
+             <label for="yy">Enter your year of birth</label>
+            <input type="number" class="form-control" id="yy" placeholder="YYYY" required>
+       
+            <label for="radio" class="radio-inline">
+                <input type="radio" name="gender" id="male" value="male" required />Male
+            </label>
+            <br>
+            <label for="radio" class="radio-inline">
+                <input type="radio" name="gender" id="female" value="female" required />Female
+            </label>
+            <label for="message">Message:</label> <br>
+            <textarea name="message" id="message" rows="6"></textarea><br><br>
+            <button type="submit" id="submit-button">Send</button>
 
+        </form>
+    <section class="form">
+
+        <h2>ENTER YOUR DETAILS</h2>
+        <div class="form">
+            <div class="row">
+                <label for="dd">Enter the date
+                    <input type="number" class="form-control" id="dd" placeholder="DD" min="0" max="31" required>
+                    </label>
+                </div>
+                <div>  
+                <label for="mm">Enter your month of Birth
+                    <input type="number" class="form-control" id="mm" placeholder="MM" min="0" max="12" required>
+                    </label>
+                </div>
+            </div>
+            <label for="yy">Enter your year of birth</label>
+            <input type="number" class="form-control" id="yy" placeholder="YYYY" required>
         </div>
+        <h2>Gender (Select one please)</h2>
+        <div class="form-group">
+            <label for="radio" class="radio-inline">
+                <input type="radio" name="gender" id="male" value="male" required />Male
+            </label>
+            <br>
+            <label for="radio" class="radio-inline">
+                <input type="radio" name="gender" id="female" value="female" required />Female
+            </label>
+        </div>
+        <button class="button" onclick="readData()" type="submit" class="btn btn-success" id="submit">Submit</button>
+        </div>
+        </form>
+        </div>
+
     </section>
+        <script src="./script.js"></script>
+   
     
 </body>
+
 </html>
