@@ -2,7 +2,37 @@ header{
      background-color: bisque;
 }
 h1{
-    color: blanchedalmond;
+
     text-align: center;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size:xx-large;
+    font-style: initial;
+    color: hsl(24, 93%, 48%);;
+
+}
+p {
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 600;
+    font-size:x-large;
+    color:rgb(207, 160, 6);
+}
+.box1{
+    height: 300px;
+    width: 1500px;
+    background-color: brown;
+    margin:block;
+    margin-top: 100px;
+}
+#parrah{
+    text-align:center;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 200;
+    font-size:large;
+}
+h2{
+    text-align: center;
+    font-size:xx-large;
+    font-weight: 800;
 
 }
