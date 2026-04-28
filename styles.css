@@ -1,6 +1,15 @@
 header{
      background-color: bisque;
 }
+ body {
+     background-image: url("./background.jpg");
+     background-size: cover;
+     /* fills entire screen */
+     background-repeat: no-repeat;
+     /* no repeating */
+     background-position: center;
+     /* centered */
+ }
 h1{
 
     text-align: center;
