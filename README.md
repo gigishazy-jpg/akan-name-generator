@@ -4,7 +4,7 @@
 
 The Akan Name Generator is a web application that generates a traditional Akan name based on a user’s date of birth and gender.
 
-In Akan culture (from Ghana), children are given names according to the **day of the week** they were born. This application helps users easily discover their Akan name.
+In Akan culture (from Ghana), children are given names according to the day of the week they were born. This application helps users easily discover their Akan name.
 
 ## Author
 
