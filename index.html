@@ -42,21 +42,22 @@
             <div class="row">
                 <div class="field">
                     <label>Date</label>
-                    <input type="number" id="day" placeholder="DD">
+                    <input type="number" id="day" placeholder="Day (1–31)" min="1">
                     <small class="error" id="dayError"></small>
                 </div>
 
                 <div class="field">
                     <label>Month</label>
-                    <input type="number" id="month" placeholder="MM">
+                    <select id="month"></select>
                     <small class="error" id="monthError"></small>
                 </div>
             </div>
 
             <div class="field">
                 <label>Year</label>
-                <input type="number" id="year" placeholder="YYYY">
+                <input type="number" id="year" placeholder="Year (YYYY)" min="0" max="2030">
                 <small class="error" id="yearError"></small>
+
             </div>
 
             <select id="gender">
@@ -77,6 +78,6 @@
     </form>
 
     <script src="./script.js"></script>
-    </body>
+</body>
 
 </html>
