@@ -25,6 +25,8 @@ p {
         text-align: center;
         padding: 10px;
         border-radius: 130px;
+        margin-top: 50px;
+        
     }
 
 #parrah{
@@ -87,11 +89,11 @@ form button {
 }
 
 form button:hover {
-    background-color: #0056b3;
+    background-color: #031a33;
 }
 
 form button:active {
-    background-color: #004085;
+    background-color: #7890af;
 }
 
 form label {
@@ -103,6 +105,16 @@ option {
     background-color: white;
     color: black;
 
+}
+select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+    font-size: 16px;
+    background-color: white;
+    cursor: pointer;
+    margin-bottom: 30px;
 }
 
 
@@ -137,15 +149,15 @@ input {
 }
 
 .result-box {
-    width: 80%;
-    max-width: 600px;
-    margin: 20px auto;
+    width: 100%;
+    max-width: 650px;
+    margin: 30px auto;
     padding: 30px;
     text-align: center;
     font-size: 22px;
     font-weight: bold;
     background: white;
-    border-radius: 10px;
+    border-radius: 30px;
     border: 3px solid hsl(27, 93%, 24%);
     box-shadow: 0 0 10px hsla(32, 74%, 39%, 0.2);
 }
