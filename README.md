@@ -1,37 +1,75 @@
+#  Akan Name Generator
+
+## Description
+
+The Akan Name Generator is a web application that generates a traditional Akan name based on a user’s date of birth and gender.
+
+In Akan culture (from Ghana), children are given names according to the **day of the week** they were born. This application helps users easily discover their Akan name.
+
+## Author
+
+Sharon Ngigi
+
+## link to the page
 
 
-# Akan Name Generator
 
-A simple application that generates traditional Akan names based on a user's date of birth and gender. Akan names originate from Ghana and are given according to the day of the week a person 
+##  Setup Instructions
 
-## About Akan Names
+Ensure you have the following installed:
 
-In Akan culture, each day of the week is associated with specific names for males and females. This app calculates the day you were born and assigns the corresponding Akan name.
-
-## Features
-
-* Input your **date of birth**
-* Select your **gender**
-* Automatically calculates the **day of the week**
-* Displays your **Akan name**
-* Simple and user-friendly interface
-
-## Technologies Used
-
-* HTML
-* CSS
-* JavaScript
+1 Git
+2 A web browser (Chrome, Firefox, etc.)
+3 (Optional) VS Code or any code editor
 
 
-## How It Works
+### Installation Process
 
-The application:
+1. Clone the repository
+   git clone <your-repo-link>
 
-1. Takes the user's birth date
-2. Uses a formula to determine the day of the week
-3. Matches the day with predefined Akan names
+2. Navigate into the project folder
+    cd akan-name-generator
 
-## Akan Name Reference
+3. Open the project in your code editor 
+   code .
+
+4. Open the application
+
+   * Locate the `index.html` file
+   * Double-click it
+
+   
+
+---
+
+### Alternative Setup (Without Git)
+
+1. Download the ZIP file from GitHub
+2. Extract the files
+3. Open the folder
+4. Double-click `index.html`
+
+##  How It Works
+
+1. Enter your birth date
+2. Select your gender
+3. Click "YOUR AKAN NAME" button
+4. The app calculates the day of the week
+5. Your Akan name is displayed
+
+
+##  BDD (Behavior Driven Development)
+
+| Scenario      | Input                   | Expected Output            |
+| ------------- | ----------------------- | -------------------------- |
+| Valid input   | Birth date + gender     | Displays correct Akan name |
+| Invalid day   | Day ≤ 0 or Day > 31     | Error message              |
+| Invalid month | Month ≤ 0 or Month > 12 | Error message              |
+| Missing input | No date or gender       | Prompt user to fill fields |
+
+
+##  Akan Name Reference
 
 | Day       | Male Name | Female Name |
 | --------- | --------- | ----------- |
@@ -44,11 +82,38 @@ The application:
 | Saturday  | Kwame     | Ama         |
 
 
+##  Technologies Used
+
+ HTML
+CSS
+JavaScript
+
+
+
+##  Features
+
+ Simple and user-friendly interface
+ Instant Akan name generation
+ Input validation for date fields
+ Gender-based name selection
+
+
 
 ##  License
 
 This project is licensed under the MIT License.
 
-##  Author
+Copyright (c) 2026 Sharon Ngigi
 
-SHARON NGIGI
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files
+
+
+## Future Improvements
+
+ Improve UI/UX design
+ Add animations and better feedback
+ Deploy a live version
+ Enhance accessibility
+
+
