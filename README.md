@@ -11,7 +11,7 @@ In Akan culture (from Ghana), children are given names according to the **day of
 Sharon Ngigi
 
 ## link to the page
-
+https://gigishazy-jpg.github.io/akan-name-generator/
 
 
 ##  Setup Instructions
