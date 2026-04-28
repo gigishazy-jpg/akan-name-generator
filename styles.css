@@ -108,22 +108,11 @@ form label {
     border-radius: 40px;
 }
 
-.row {
-    display: flex;
-    gap: 25px;
-}
-
-.field {
-    flex: 1;
-    display: flex;
-    flex-direction:row;
-    margin-bottom: 15px;
-}
 
 input {
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #aaa;
+    border: 1px solid #4e2401;
 }
 
 .gender {
@@ -138,7 +127,6 @@ input {
     height: 14px;
 }
 
-/* Result Display Box */
 .result-box {
     width: 80%;
     max-width: 600px;
@@ -149,6 +137,6 @@ input {
     font-weight: bold;
     background: white;
     border-radius: 10px;
-    border: 3px solid gold;
+    border: 3px solid rgb(59, 29, 4);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
