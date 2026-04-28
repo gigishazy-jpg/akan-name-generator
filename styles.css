@@ -76,8 +76,8 @@ form textarea:focus {
 /* cursor pointer is used to indicate that an element is clickable it changes from cursor to hand */
 /* when you have transition above you get to hover the changing of color and text declared */
 form button {
-    background-color: #007bff;
-    color: white;
+    background-color: hsl(211, 94%, 7%);
+    color: hsl(175, 89%, 30%);
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -116,7 +116,9 @@ input {
 }
 
 .gender {
-    margin-top: 15px;
+    margin-top: 25px;
+    display: flex;
+
 }
 
 
@@ -137,6 +139,6 @@ input {
     font-weight: bold;
     background: white;
     border-radius: 10px;
-    border: 3px solid rgb(59, 29, 4);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border: 3px solid hsl(27, 93%, 24%);
+    box-shadow: 0 0 10px hsla(32, 74%, 39%, 0.2);
 }
