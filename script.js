@@ -16,13 +16,12 @@ const months = [
   "December",
 ];
 
-let defaultOption = document.createElement("option");
-defaultOption.value = "";
-defaultOption.text = "-- Select Month --";
-monthSelect.appendChild(defaultOption);
+// Default option
+monthSelect.innerHTML = '<option value="">-- Select Month --</option>';
 
+// Populate months
 months.forEach((m, i) => {
-  let option = document.createElement("option");
+  const option = document.createElement("option");
   option.value = i + 1;
   option.text = m;
   monthSelect.appendChild(option);
@@ -41,125 +40,105 @@ months.forEach((m, i) => {
   });
 });
 
-// ===== LEAP YEAR =====
+// ===== LEAP YEAR FUNCTION =====
 function isLeapYear(y) {
   return (y % 4 === 0 && y % 100 !== 0) || y % 400 === 0;
 }
 
-// ===== VALIDATION FUNCTIONS =====
-function validateDay() {
-  const day = parseInt(dayInput.value);
-  const month = parseInt(monthSelect.value);
-  const year = parseInt(yearInput.value);
-
-  if (!day) return (dayError.innerText = "Day required");
-  if (day < 1) return (dayError.innerText = "Invalid day");
-
-  if (month && year) {
-    const daysInMonth = [
-      31,
-      isLeapYear(year) ? 29 : 28,
-      31,
-      30,
-      31,
-      30,
-      31,
-      31,
-      30,
-      31,
-      30,
-      31,
-    ];
-
-    if (day > daysInMonth[month - 1]) {
-      return (dayError.innerText = "Invalid for this month");
-    }
-  }
-
-  dayError.innerText = "";
-  return true;
+// ===== DAYS IN MONTH =====
+function getDaysInMonth(month, year) {
+  if ([4, 6, 9, 11].includes(month)) return 30;
+  if (month === 2) return isLeapYear(year) ? 29 : 28;
+  return 31;
 }
 
-function validateMonth() {
-  if (!monthSelect.value) {
-    monthError.innerText = "Select month";
-    return false;
-  }
-  monthError.innerText = "";
-  return true;
-}
-
-function validateYear() {
-  const year = yearInput.value;
-
-  if (!year) return (yearError.innerText = "Year required");
-  if (year.length !== 4 || year > 2030) {
-    return (yearError.innerText = "4 digits ≤ 2030");
-  }
-
-  yearError.innerText = "";
-  return true;
-}
-
-function validateGender() {
-  const gender = document.querySelector('input[name="gender"]:checked');
-  if (!gender) {
-    genderError.innerText = "Select gender";
-    return false;
-  }
-  genderError.innerText = "";
-  return true;
-}
-
-// ===== ELEMENT REFERENCES =====
+// ===== ELEMENTS =====
 const dayInput = document.getElementById("day");
 const yearInput = document.getElementById("year");
+const result = document.getElementById("resultText");
 
-const dayError = document.getElementById("dayError");
-const monthError = document.getElementById("monthError");
-const yearError = document.getElementById("yearError");
-const genderError = document.getElementById("genderError");
+// ===== LIVE VALIDATION =====
+function validateDate() {
+  const day = parseInt(dayInput.value);
+  const month = parseInt(monthSelect.value);
+  const year = parseInt(yearInput.value);
 
-// ===== LIVE VALIDATION EVENTS =====
-dayInput.addEventListener("input", validateDay);
-monthSelect.addEventListener("change", () => {
-  validateMonth();
-  validateDay();
-});
-yearInput.addEventListener("input", validateYear);
+  if (!day || !month || !year) return false;
 
-document
-  .querySelectorAll('input[name="gender"]')
-  .forEach((r) => r.addEventListener("change", validateGender));
+  if (day < 1) {
+    result.innerText = "Day must be at least 1.";
+    return false;
+  }
+
+  const maxDays = getDaysInMonth(month, year);
+
+  if (day > maxDays) {
+    result.innerText = `Invalid date! ${months[month - 1]} has only ${maxDays} days.`;
+    return false;
+  }
+
+  result.innerText = "";
+  return true;
+}
+
+// ===== LIVE EVENTS =====
+dayInput.addEventListener("input", validateDate);
+monthSelect.addEventListener("change", validateDate);
+yearInput.addEventListener("input", validateDate);
 
 // ===== FORM SUBMIT =====
-document.getElementById("akanForm").addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  if (
-    !validateDay() ||
-    !validateMonth() ||
-    !validateYear() ||
-    !validateGender()
-  )
-    return;
+document.getElementById("form").addEventListener("submit", function (e) {
+  e.preventDefault(); // 🚫 stop page refresh
 
   const day = parseInt(dayInput.value);
   const month = parseInt(monthSelect.value);
   const year = parseInt(yearInput.value);
-  const gender = document.querySelector('input[name="gender"]:checked').value;
 
-  // ===== FORMULA =====
-  const CC = Math.floor(year / 100);
-  const YY = year % 100;
+  // ✅ Gender from dropdown
+  const gender = document.getElementById("gender").value;
+
+  // ===== VALIDATION =====
+  if (!day || !month || !year || gender === "") {
+    result.innerText = "Please fill all fields!";
+    return;
+  }
+
+  if (year < 0) {
+    result.innerText = "Year cannot be negative.";
+    return;
+  }
+
+  if (year.toString().length !== 4 || year > 2030) {
+    result.innerText = "Year must be 4 digits and ≤ 2030.";
+    return;
+  }
+
+  if (!validateDate()) return;
+
+  // ===== FORMULA CALCULATION =====
+
+  // Adjust Jan & Feb
+  let adjYear = year;
+  let adjMonth = month;
+
+  if (month === 1 || month === 2) {
+    adjMonth = month + 12;
+    adjYear = year - 1;
+  }
+
+  const CC = Math.floor(adjYear / 100);
+  const YY = adjYear % 100;
+  const MM = adjMonth;
+  const DD = day;
 
   let d =
-    Math.floor(
-      CC / 4 - 2 * CC - 1 + (5 * YY) / 4 + (26 * (month + 1)) / 10 + day,
-    ) % 7;
+    Math.floor(CC / 4 - 2 * CC - 1 + (5 * YY) / 4 + (26 * (MM + 1)) / 10 + DD) %
+    7;
 
+  // Fix negative mod
   if (d < 0) d = (d + 7) % 7;
 
+  // ===== DAY NAMES =====
   const days = [
     "Sunday",
     "Monday",
@@ -169,11 +148,30 @@ document.getElementById("akanForm").addEventListener("submit", function (e) {
     "Friday",
     "Saturday",
   ];
-  const male = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
-  const female = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
 
-  const name = gender === "male" ? male[d] : female[d];
+  // ===== AKAN NAMES =====
+  const maleNames = [
+    "Kwasi",
+    "Kwadwo",
+    "Kwabena",
+    "Kwaku",
+    "Yaw",
+    "Kofi",
+    "Kwame",
+  ];
 
-  document.getElementById("resultText").innerText =
-    `You were born on a ${days[d]}. Your Akan name is ${name}!`;
+  const femaleNames = [
+    "Akosua",
+    "Adwoa",
+    "Abenaa",
+    "Akua",
+    "Yaa",
+    "Afua",
+    "Ama",
+  ];
+
+  const akanName = gender === "male" ? maleNames[d] : femaleNames[d];
+
+  // ===== DISPLAY RESULT =====
+  result.innerText = `You were born on a ${days[d]}. Your Akan name is ${akanName}!`;
 });
