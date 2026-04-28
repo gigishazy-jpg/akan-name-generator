@@ -117,7 +117,8 @@ input {
 
 .gender {
     margin-top: 25px;
-    display: flex;
+    display:flexbox;
+
 
 }
 
