@@ -37,6 +37,7 @@ h2{
     text-align: center;
     font-size:xx-large;
     font-weight: 800;
+    color:rgb(45, 155, 136);
 
 }
 .profileakan{
@@ -94,5 +95,60 @@ form button:active {
 }
 
 form label {
-    color: coral;
+    color: rgb(13, 177, 155);
+
+}
+
+
+.container {
+    background: #d3d3d3;
+    margin: 20px auto;
+    padding: 35px;
+    width: 100%;
+    border-radius: 40px;
+}
+
+.row {
+    display: flex;
+    gap: 25px;
+}
+
+.field {
+    flex: 1;
+    display: flex;
+    flex-direction:row;
+    margin-bottom: 15px;
+}
+
+input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+}
+
+.gender {
+    margin-top: 15px;
+}
+
+
+
+.error {
+    color: red;
+    font-size: 12px;
+    height: 14px;
+}
+
+/* Result Display Box */
+.result-box {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 30px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    background: white;
+    border-radius: 10px;
+    border: 3px solid gold;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
