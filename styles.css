@@ -170,3 +170,28 @@ input {
     border: 3px solid hsl(27, 93%, 24%);
     box-shadow: 0 0 10px hsla(32, 74%, 39%, 0.2);
 }
+header a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header h1 {
+    font-size: 40px;
+    margin: 0%;
+}
+
+nav {
+    background-color: hsl(27, 95%, 30%);
+    text-align: center;
+    padding: 20px;
+
+}
+nav a{
+    margin:0 36px;
+}
+
+/* hover is used if you click on it changes the color of the original text */
+nav a:hover {
+    color: #ff6347;
+    text-decoration: underline;
+}
