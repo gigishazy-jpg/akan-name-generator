@@ -35,36 +35,56 @@
         </div>
 
     </section>
-    <form>
-            <!-- full name input -->
-            <label for="dd">DATE:</label> <br>
-             <input type="number" class="form-control" id="dd" placeholder="DD" min="0" max="31" required><br><br>
-            <!-- email input -->
-            <label for="mm">MONTH:</label> <br>
-            <input type="number" class="form-control" id="mm" placeholder="MM" min="0" max="12" required> <br><br>
-             <label for="yy">YEAR:</label>
-            <input type="number" class="form-control" id="yy" placeholder="YYYY" required>
+    <form>  
+    <div class="container">
+        <h2>Please enter your Birthday Details!</h2>
 
-            <div> 
-                <p>GENDER:</p>   
-            <label></label>
-            <input type="radio" name="gender" id="male" value="male"> MALE
-            </label>
-            <label for="radio" class="radio-inline">
-                <input type="radio" name="gender" id="female" value="female" required />Female
-            </label>
+        <div class="row">
+            <div class="field">
+                <label>Date</label>
+                <input type="number" id="day" placeholder="DD">
+                <small class="error" id="dayError"></small>
             </div>
-            <label for="message">Message:</label> <br>
-            <textarea name="message" id="message" rows="6"></textarea><br><br>
-            <button type="submit" id="submit-button">Send</button>
 
-        </form>
-   
+            <div class="field">
+                <label>Month</label>
+                <input type="number" id="month" placeholder="MM">
+                <small class="error" id="monthError"></small>
+            </div>
+        </div>
 
-    </section>
-        <script src="./script.js"></script>
-   
-    
+        <div class="field">
+            <label>Year</label>
+            <input type="number" id="year" placeholder="YYYY">
+            <small class="error" id="yearError"></small>
+        </div>
+
+        <div class="gender">
+            <h3>Gender</h3>
+            <label><input type="radio" name="gender" value="male"> Male</label>
+            <label><input type="radio" name="gender" value="female"> Female</label>
+            <small class="error" id="genderError"></small>
+        </div>
+
+        <button id="akanBtn">Your Akan Name</button>
+    </div>
+
+    <!-- Result Box -->
+    <div class="result-box" id="resultBox">
+        <p id="resultText">Your Akan name will appear here</p>
+    </div>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+
+</section>
+<script src="./script.js"></script>
+
+
 </body>
 
 </html>
