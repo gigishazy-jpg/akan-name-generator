@@ -167,8 +167,9 @@ document.getElementById("form").addEventListener("submit", function (e) {
     // cc example 2023 first part of the year 20
     // yy last part of the year 23 in 2023
     // mm the month
-
-
+    // dd day
+    // mathfloor removes decimals in the cc,yy,mm,dd
+    // it takes the cc,yy,mm,dd and dives them by 7 bcz of the 7 days in a week
 
   // Fix negative mod
   if (d < 0) d = (d + 7) % 7;
