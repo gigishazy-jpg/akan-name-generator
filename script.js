@@ -62,7 +62,7 @@ function isLeapYear(y) {
   return (y % 4 === 0 && y % 100 !== 0) || y % 400 === 0;
 }
 // calculates the year if its both divisible by 4 and 100 remainder is 0
-//  if its not divisible by 100 return false because it should also be divisible by 400
+//  if its not divisible by 100 return false and if true it should also be divisible by 400
 //  && means both should be true || or one condition should be true to be true
 
 // ===== DAYS IN MONTH =====
@@ -71,6 +71,7 @@ function getDaysInMonth(month, year) {
   if (month === 2) return isLeapYear(year) ? 29 : 28;
   return 31;
 }
+// 
 
 // ===== ELEMENTS =====
 const dayInput = document.getElementById("day");
