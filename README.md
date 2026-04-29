@@ -18,7 +18,7 @@ https://gigishazy-jpg.github.io/akan-name-generator/
 
 Ensure you have the following installed:
 
-1 Git
+1 Git ()
 2 A web browser (Chrome, Firefox, etc.)
 3 (Optional) VS Code or any code editor
 
@@ -26,7 +26,7 @@ Ensure you have the following installed:
 ### Installation Process
 
 1. Clone the repository
-   git clone <your-repo-link>
+   git clone <https://gigishazy-jpg.github.io/akan-name-generator/>
 
 2. Navigate into the project folder
     cd akan-name-generator
@@ -36,12 +36,9 @@ Ensure you have the following installed:
 
 4. Open the application
 
-   * Locate the `index.html` file
-   * Double-click it
+    Locate the `index.html` file
+    Double-click it
 
-   
-
----
 
 ### Alternative Setup (Without Git)
 

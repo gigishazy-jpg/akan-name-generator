@@ -18,25 +18,42 @@ const months = [
 
 // Default option
 monthSelect.innerHTML = '<option value="">-- Select Month --</option>';
+// sets the first option as a placeholder so nothing is selected initially
 
 // Populate months
 months.forEach((m, i) => {
+  // loops through every item in the array
   const option = document.createElement("option");
+  // creates a new html element that goes into the select dropdown
   option.value = i + 1;
+  // the i represents the index 0 that starts in the array + 1 bcz the months are usually numbered 1-12 
   option.text = m;
+  // m represents month hence sets the visible text of the dropdown
   monthSelect.appendChild(option);
+  // adds the newly created option into select element after each loop the dropdown grows
 });
 
 // ===== PREVENT NEGATIVE INPUT =====
 ["day", "year"].forEach((id) => {
+  // in the array of  the id day and year for each loops through its a method 
+  // loops through 2 ids day and year each once
+  // for each item in the day and year run the method 
+  // => takes the id day and year into the parenthesis to run through the methods
   const input = document.getElementById(id);
+  // checks what is input in the ids day and year 
+  // => this is an arrow function used to write functions in a shorter way
+  // used getElementById to find the elements id in the html
 
   input.addEventListener("keydown", (e) => {
     if (e.key === "-" || e.key === "e") e.preventDefault();
   });
-
+// keydown runs when a key is pressed
+// (e) event object tells you what is pressed in the keys
+// "-" when you press the - negative key it refuses to add itself in the input bcz it is prevented 
+// through the prevent default which stops the key from appearing in the input
   input.addEventListener("input", () => {
     if (input.value < 0) input.value = "";
+    // input runs whenever the  value is typed or pasted if the value is negative it clears the input
   });
 });
 
@@ -44,6 +61,9 @@ months.forEach((m, i) => {
 function isLeapYear(y) {
   return (y % 4 === 0 && y % 100 !== 0) || y % 400 === 0;
 }
+// calculates the year if its both divisible by 4 and 100 remainder is 0
+//  if its not divisible by 100 return false because it should also be divisible by 400
+//  && means both should be true || or one condition should be true to be true
 
 // ===== DAYS IN MONTH =====
 function getDaysInMonth(month, year) {
@@ -88,7 +108,7 @@ yearInput.addEventListener("input", validateDate);
 
 // ===== FORM SUBMIT =====
 document.getElementById("form").addEventListener("submit", function (e) {
-  e.preventDefault(); // 🚫 stop page refresh
+  e.preventDefault(); //  stop page refresh
 
   const day = parseInt(dayInput.value);
   const month = parseInt(monthSelect.value);
