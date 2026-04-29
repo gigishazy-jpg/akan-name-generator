@@ -170,9 +170,13 @@ document.getElementById("form").addEventListener("submit", function (e) {
     // dd day
     // mathfloor removes decimals in the cc,yy,mm,dd
     // it takes the cc,yy,mm,dd and dives them by 7 bcz of the 7 days in a week
+    // this gives you a number between 0 and 6
+    // 0 represents sunday and 6 is saturday
 
   // Fix negative mod
   if (d < 0) d = (d + 7) % 7;
+  // helps the day range between 0 and 6
+
 
   // ===== DAY NAMES =====
   const days = [
