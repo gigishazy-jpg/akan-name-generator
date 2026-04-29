@@ -152,6 +152,9 @@ document.getElementById("form").addEventListener("submit", function (e) {
     adjMonth = month + 12;
     adjYear = year - 1;
   }
+  // january and february are adjusted bcz they are moved to the end of the year 
+  // january becomes 13 but the year it displays - 1 eg if you input january 2024 it checks the date 13 of 2023
+  // this is because the year starts in march 
 
   const CC = Math.floor(adjYear / 100);
   const YY = adjYear % 100;
@@ -161,6 +164,11 @@ document.getElementById("form").addEventListener("submit", function (e) {
   let d =
     Math.floor(CC / 4 - 2 * CC - 1 + (5 * YY) / 4 + (26 * (MM + 1)) / 10 + DD) %
     7;
+    // cc example 2023 first part of the year 20
+    // yy last part of the year 23 in 2023
+    // mm the month
+
+
 
   // Fix negative mod
   if (d < 0) d = (d + 7) % 7;
