@@ -80,14 +80,17 @@ function getDaysInMonth(month, year) {
 const dayInput = document.getElementById("day");
 const yearInput = document.getElementById("year");
 const result = document.getElementById("resultText");
-
+// connects javascript to html the day input is where the user inputs the day
 // ===== LIVE VALIDATION =====
 function validateDate() {
   const day = parseInt(dayInput.value);
   const month = parseInt(monthSelect.value);
   const year = parseInt(yearInput.value);
+  // function validateDate checks if the user entered a valid date
+  // parseInt converts the input into a number because what is input is a string
 
   if (!day || !month || !year) return false;
+  // 
 
   if (day < 1) {
     result.innerText = "Day must be at least 1.";
