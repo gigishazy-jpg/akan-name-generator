@@ -90,7 +90,7 @@ function validateDate() {
   // parseInt converts the input into a number because what is input is a string
 
   if (!day || !month || !year) return false;
-  // 
+  // checks if the input is empty like no input it displays fill the details
 
   if (day < 1) {
     result.innerText = "Day must be at least 1.";
@@ -121,7 +121,7 @@ document.getElementById("form").addEventListener("submit", function (e) {
   const month = parseInt(monthSelect.value);
   const year = parseInt(yearInput.value);
 
-  // ✅ Gender from dropdown
+  //  Gender from dropdown
   const gender = document.getElementById("gender").value;
 
   // ===== VALIDATION =====
