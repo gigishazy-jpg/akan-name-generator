@@ -68,8 +68,11 @@ function isLeapYear(y) {
 // ===== DAYS IN MONTH =====
 function getDaysInMonth(month, year) {
   if ([4, 6, 9, 11].includes(month)) return 30;
+  // the 4,6,9,11 represents the months that have 30 days eg 4 represents april
   if (month === 2) return isLeapYear(year) ? 29 : 28;
+  // if the month is feb and its a leap year return 29 otherwise return 28
   return 31;
+  // other months have 31 days 
 }
 // 
 
